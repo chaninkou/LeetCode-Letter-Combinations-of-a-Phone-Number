@@ -31,10 +31,10 @@ public class FindAllPossibleLetterCombinationsFunction {
             // then there is only one letter in the queue add one letter again, 
             // then two letter in the queue  and so on
             while(result.peek().length() == i){
-                // remove() in LinkedList is like the pop() value from the queue, first it will be "", then one letter, then two letter,...
+                // remove() in LinkedList is like the pop() value from the queue, first it will be "", then one letter, then two letter, and so on
                 String permutation = result.remove();
                 
-                // We will add each letter from the current map index into the queue
+                // We will add each letter from the current map index into the queue, which is 'a','b','c' or so on
                 for(char c : char_map[index].toCharArray()){
                     result.add(permutation + c);
                 }
