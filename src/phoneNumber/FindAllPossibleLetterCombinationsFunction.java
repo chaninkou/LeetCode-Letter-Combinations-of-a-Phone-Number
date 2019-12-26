@@ -35,8 +35,8 @@ public class FindAllPossibleLetterCombinationsFunction {
                 String permutation = result.remove();
                 
                 // We will add each letter from the current map index into the queue, which is 'a','b','c' or so on
-                for(char c : char_map[index].toCharArray()){
-                    result.add(permutation + c);
+                for(char letter : char_map[index].toCharArray()){
+                    result.add(permutation + letter);
                 }
             }
             
