@@ -3,6 +3,8 @@ package phoneNumber;
 import java.util.LinkedList;
 import java.util.List;
 
+// Linkedlist is good at removing and adding, but search worst time is O(n)
+// ArrayList is good at searching in O(1), but removing worst time is O(n) if it needs to remove the last element
 public class FindAllPossibleLetterCombinationsFunction {
     public List<String> letterCombinations(String digits) {
         // Using LinkedList cause it can also act as a queue where ArrayList can't
