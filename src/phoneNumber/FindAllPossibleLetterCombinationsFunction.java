@@ -39,13 +39,15 @@ public class FindAllPossibleLetterCombinationsFunction {
             // so c -> ad -> ae -> af -> c -> bd -> be -> bf 
             // then: peek() will check the length to be 1 == 1
             // so c -> ad -> ae -> af -> c -> bd -> be -> bf -> cd -> ce -> cf 
-            
+            // This while loop will keep going until we get the correct length
             while(result.peek().length() == i){
                 // remove() in LinkedList is like the pop() value from the queue, first it will be "", then one letter, then two letter, and so on
                 String permutation = result.remove();
                 
                 // We will add each letter from the current map index into the queue, which is 'a','b','c' or so on
                 for(char letter : char_map[index].toCharArray()){
+                	
+                	// Whatever in the front of the linked list will get added with the combination
                     result.add(permutation + letter);
                 }
             }
