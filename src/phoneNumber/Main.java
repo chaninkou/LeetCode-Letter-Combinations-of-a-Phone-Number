@@ -8,6 +8,6 @@ public class Main {
 		
 		FindAllPossibleLetterCombinationsFunction solution = new FindAllPossibleLetterCombinationsFunction();
 		
-		System.out.println("Solution: " + solution.letterCombinations(digits));
+		System.out.println("Solution: " + solution.letterCombinations2(digits));
 	}
 }

@@ -1,5 +1,6 @@
 package phoneNumber;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -58,5 +59,49 @@ public class FindAllPossibleLetterCombinationsFunction {
         }
         
         return result;
+    }
+    
+    // Faster way of doing it, harder to understand but very interesting
+    
+    public List<String> letterCombinations2(String digits) {
+    	List<String> result = new ArrayList<>();
+    	
+    	if(digits.length() == 0){
+    		return result;
+    	}
+    	
+    	String[] char_map = {"0", "1", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
+    	
+    	// Starting from 0 index, stringbuilder should be empty first
+    	dfs(digits.toCharArray(), 0, char_map, new StringBuilder(), result);
+    	
+    	return result;
+    }
+    
+    
+    // ex: digits: 23, 2 = abc, 3 = def
+    // ad -> ae -> af, bd -> be -> bf, so on
+    private void dfs(char[] input, int index, String[] char_map, StringBuilder sb, List<String> result){
+    	// This is the base case, when the index reaches the input length
+    	if(index == input.length){
+    		result.add(sb.toString());
+    		// return will just skip the bottom code
+    		return;
+    	}
+    	
+    	// Could use Character.toNumericValue(input[index]) also
+    	String currentGroup = char_map[input[index] - '0'];
+    	
+    	// For each letters in the group, we will do a dfs
+    	for(char letter : currentGroup.toCharArray()){
+    		// Add the single letter
+    		sb.append(letter);
+    		
+    		// Increase the index number
+    		dfs(input, index + 1, char_map, sb, result);
+    		
+    		// Make sure to delete the previous sb
+    		sb.deleteCharAt(sb.length() - 1);
+    	}
     }
 }
