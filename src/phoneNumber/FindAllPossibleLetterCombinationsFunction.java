@@ -13,7 +13,7 @@ public class FindAllPossibleLetterCombinationsFunction {
         LinkedList<String> result = new LinkedList<>();
         
         // If the string is empty, then just return empty list
-        if(digits.length() == 0){
+        if(digits.length() == 0 || digits == null){
             return result;
         }
         
@@ -22,7 +22,7 @@ public class FindAllPossibleLetterCombinationsFunction {
         
         // Mapping of all of the numbers to characters, access the letter that they represent by their index
         // No need to do = new String[]{...};
-        String[] char_map = {"0", "1", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
+        String[] char_map = {"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
         
         // Go through digit by digit
         for(int i = 0; i < digits.length(); i++){
@@ -62,7 +62,6 @@ public class FindAllPossibleLetterCombinationsFunction {
     }
     
     // Faster way of doing it, harder to understand but very interesting
-    
     public List<String> letterCombinations2(String digits) {
     	List<String> result = new ArrayList<>();
     	
