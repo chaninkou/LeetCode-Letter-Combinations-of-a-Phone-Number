@@ -97,10 +97,10 @@ public class FindAllPossibleLetterCombinationsFunction {
     		// Add the single letter
     		sb.append(letter);
     		
-    		// Increase the index number
+    		// Call dfs again to finish the word off
     		dfs(input, index + 1, char_map, sb, result);
     		
-    		// Make sure to delete the previous sb
+    		// Make sure to delete whatever got added previous
     		sb.deleteCharAt(sb.length() - 1);
     	}
     }
