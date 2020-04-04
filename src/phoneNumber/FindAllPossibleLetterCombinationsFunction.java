@@ -9,6 +9,7 @@ import java.util.List;
 // Both is O(n) of finding if element is in, but if inserting into arraylist is sorted, we could use binary search to get O(logn) time
 public class FindAllPossibleLetterCombinationsFunction {
     public List<String> letterCombinations(String digits) {
+    	// List interface does not have all the function linkedlist have
         // Using LinkedList cause it can also act as a queue where ArrayList can't
         LinkedList<String> result = new LinkedList<>();
         
@@ -17,7 +18,7 @@ public class FindAllPossibleLetterCombinationsFunction {
             return result;
         }
         
-        // Add an empty string to set up, we need this since i starts from 0
+        // For while(result.peek().length() == i), we want to start from zero
         result.add("");
         
         // Mapping of all of the numbers to characters, access the letter that they represent by their index
