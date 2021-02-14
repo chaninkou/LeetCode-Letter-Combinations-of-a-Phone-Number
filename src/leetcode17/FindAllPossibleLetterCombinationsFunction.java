@@ -28,7 +28,6 @@ public class FindAllPossibleLetterCombinationsFunction {
         // Go through digit by digit
         for(int i = 0; i < digits.length(); i++){
             // get the integer value of current character of digits, 
-            // or else it will be 50 instead of 2 since '2' is 50
         	// Character.getNumericValue() could work too
             int index = digits.charAt(i) - '0';
             
